@@ -13,7 +13,7 @@ extern "C"
 #include "ffmpegDecode.h"
 #include <fstream>
 using namespace std;
-
+//测试地址
 char const *filename = "udp://192.168.1.132:5000?overrun_nonfatal=0&fifo_size=50000000";
 
 int main(int argc, char** argv)
