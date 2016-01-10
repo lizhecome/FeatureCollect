@@ -28,7 +28,7 @@ ffmpegDecode :: ffmpegDecode(char * file)
     
     if (NULL == file)
     {
-        filepath =  "opencv.h264";
+        filepath =  (char*)"opencv.h264";
     }
     else
     {
@@ -105,7 +105,7 @@ void ffmpegDecode :: openDecode()
 void ffmpegDecode :: prepare()
 {
     //分配一个帧指针，指向解码后的原始帧
-    pAvFrame=avcodec_alloc_frame();
+    pAvFrame=av_frame_alloc();
     y_size = pCodecCtx->width * pCodecCtx->height;
     //分配帧内存
     packet=(AVPacket *)av_malloc(sizeof(AVPacket));
@@ -186,7 +186,7 @@ void ffmpegDecode :: get(AVCodecContext    * pCodecCtx, SwsContext * img_convert
     
     AVFrame    *pFrameRGB = NULL;
     uint8_t  *out_bufferRGB = NULL;
-    pFrameRGB = avcodec_alloc_frame();
+    pFrameRGB = av_frame_alloc();
     
     //给pFrameRGB帧加上分配的内存;
     int size = avpicture_get_size(AV_PIX_FMT_BGR24, pCodecCtx->width, pCodecCtx->height);

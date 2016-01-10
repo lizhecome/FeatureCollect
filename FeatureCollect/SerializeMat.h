@@ -1,7 +1,7 @@
 //
 //  SerializeMat.h
 //  opencvtest
-//
+//  序列化opencv:mat对象
 //  Created by lizhe on 15/9/12.
 //  Copyright © 2015年 TJGD. All rights reserved.
 //
